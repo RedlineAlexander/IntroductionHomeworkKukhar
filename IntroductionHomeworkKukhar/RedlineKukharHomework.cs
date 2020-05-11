@@ -37,7 +37,12 @@ namespace IntroductionHomeworkKukhar
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync(_config["Microsoft.Hosting.Lifetime"]);
+                    // await context.Response.WriteAsync(Microsoft.Hosting.Lifetime); нельзя так делать
+                   // await context.Response.WriteAsync(_config["Logging"]);
+                 //   await context.Response.WriteAsync(System.Diagnostics.Process.GetCurrentProcess().ProcessName); iisexpress
+                   // await context.Response.WriteAsync(_config["Microsoft"]);
+                  //  await context.Response.WriteAsync(_config["Microsoft.Hosting.Lifetime"]);
+                    //await context.Response.WriteAsync(_config["Logging"]);
                 });
             });
         }
