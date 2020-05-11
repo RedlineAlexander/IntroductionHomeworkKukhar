@@ -15,12 +15,14 @@ namespace IntroductionHomeworkKukhar
     {
 
         private IConfiguration _config { get; set; }
+      //  private IHostingEnvironment _env { get; set; }
         public RedlineKukharHomework(IConfiguration config)
         {
             _config = config;
         }
         public void ConfigureServices(IServiceCollection services)
         {
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,11 +40,12 @@ namespace IntroductionHomeworkKukhar
                 endpoints.MapGet("/", async context =>
                 {
                     // await context.Response.WriteAsync(Microsoft.Hosting.Lifetime); нельзя так делать
-                   // await context.Response.WriteAsync(_config["Logging"]);
-                 //   await context.Response.WriteAsync(System.Diagnostics.Process.GetCurrentProcess().ProcessName); iisexpress
-                   // await context.Response.WriteAsync(_config["Microsoft"]);
-                  //  await context.Response.WriteAsync(_config["Microsoft.Hosting.Lifetime"]);
+                    // await context.Response.WriteAsync(_config["Logging"]);
+                    //   await context.Response.WriteAsync(System.Diagnostics.Process.GetCurrentProcess().ProcessName); iisexpress
+                    // await context.Response.WriteAsync(_config["Microsoft"]);
+                    //  await context.Response.WriteAsync(_config["Microsoft.Hosting.Lifetime"]);
                     //await context.Response.WriteAsync(_config["Logging"]);
+                    //await context.Response.WriteAsync(_config["Modules:Logging:Microsoft.Hosting.Lifetime"]);
                 });
             });
         }
