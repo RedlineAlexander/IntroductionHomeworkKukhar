@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -15,6 +16,7 @@ namespace IntroductionHomeworkKukhar
     {
 
         private IConfiguration _config { get; set; }
+       // private Logging logging { get; set; } 
       //  private IHostingEnvironment _env { get; set; }
         public RedlineKukharHomework(IConfiguration config)
         {
@@ -46,8 +48,17 @@ namespace IntroductionHomeworkKukhar
                     //  await context.Response.WriteAsync(_config["Microsoft.Hosting.Lifetime"]);
                     //await context.Response.WriteAsync(_config["Logging"]);
                     //await context.Response.WriteAsync(_config["Modules:Logging:Microsoft.Hosting.Lifetime"]);
+                    await context.Response.WriteAsync(_config["Logging:LogLevel:Microsoft.Hosting.Lifetime"]);
                 });
             });
+
+
+            
         }
+        //public ContentResult onGet()
+       // {
+         ////   var defaultLogLevel = _config["Logging:LogLevel:Microsoft.Hosting.Lifetime"];
+        //    return Content($"{defaultLogLevel}");
+      //  }
     }
 }
