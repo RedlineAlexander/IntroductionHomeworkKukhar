@@ -9,7 +9,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+/*
+ * 4. Добавьте в методы Configure и ConfigureServices класса вызов нужных методов для того чтоб работал вызов созданного 
+ * вами метода из контроллера. 
+Не стесняйтесь копировать 
+]из проекта созданного по шаблону MVC, 
+главное запомните, 
+каких методов не хватало для правильного вызова метода в контроллере.
+Чем меньше лишнего вы скопируете, тем лучше.
+ */
 namespace IntroductionHomeworkKukhar
 {
     public class RedlineKukharHomework
@@ -24,7 +32,7 @@ namespace IntroductionHomeworkKukhar
         }
         public void ConfigureServices(IServiceCollection services)
         {
-         
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,8 +42,16 @@ namespace IntroductionHomeworkKukhar
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
+
+            app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
@@ -49,7 +65,12 @@ namespace IntroductionHomeworkKukhar
                     //await context.Response.WriteAsync(_config["Logging"]);
                     //await context.Response.WriteAsync(_config["Modules:Logging:Microsoft.Hosting.Lifetime"]);
                     await context.Response.WriteAsync(_config["Logging:LogLevel:Microsoft.Hosting.Lifetime"]);
+
+                
                 });
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}");
             });
 
 
