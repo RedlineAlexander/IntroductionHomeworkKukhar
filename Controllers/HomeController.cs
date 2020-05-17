@@ -33,6 +33,30 @@ namespace IntroductionHomeworkKukhar.Controllers
             return "foolback my bag";
             //return View("MVC");
         }
+
+        //GET /Home/IntIndex
+        public int IntIndex()
+        {
+            return 2;
+        }
+        // GET /Home/CharIndex
+        public char CharIndex()
+        {
+            return 'd';
+        }
+        // GET /Home/LongIndex
+        public long LongIndex()
+        {
+
+            return 1111L;
+        }
+        //GET /Home/DoubleIndex
+        public double DoubleIndex()
+        {
+
+            return 2.1;
+        }
+
         public IActionResult Privacy()
         {
             return View();

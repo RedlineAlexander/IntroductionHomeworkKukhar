@@ -71,6 +71,25 @@ namespace IntroductionHomeworkKukhar
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}");
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=IntIndex}");
+                   endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=DoubleIndex}");
+                 endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=LongIndex}");
+                  endpoints.MapControllerRoute(
+                  name: "default",
+                  pattern: "{controller=Home}/{action=CharIndex}");
+
+
+
+
+
+
             });
 
 
